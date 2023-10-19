@@ -11,19 +11,17 @@ function Login() {
       password: password,
     };
 
-    axios.post('/api/user/<username>', loginData, { // Use axios.post for login
+    axios.post('/api/user/<username>', loginData, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
       .then((response) => {
-        if (response.status === 200) { // 200 is the standard status for a successful response
-          // Login was successful, you can handle the success case here
+        if (response.status === 200) {
           console.log('Login successful');
-        } else if (response.status === 404) { // Use 404 for user not found
+        } else if (response.status === 404) {
           console.log('User not found');
         } else {
-          // Handle other error cases
           console.log('Login failed');
         }
       })

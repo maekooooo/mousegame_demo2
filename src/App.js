@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import logo from './images/mousegame2.png';
 import './App.css';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import Register from './Register';

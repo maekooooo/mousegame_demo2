@@ -1,28 +1,140 @@
+@font-face {
+  font-family: PixAntiqua;
+  src: url(./fonts/PixAntiqua.ttf);
+}
+
+@font-face {
+  font-family: MiniPixel7;
+  src: url(./fonts/MiniPixel7.ttf);
+}
+
 .App {
+  min-height: 100vh;
   text-align: center;
+  background-image: url(https://i.ibb.co/8bCt4Ft/Wolvenpass.png);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: animatedBackground 300s linear infinite;
+  font-family: MiniPixel7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000% 0; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topnav {
+  align-content: center;
+  background-color: #333;
+  overflow: hidden;
+  min-height: 75px;
+  padding: 0.5rem;
+  
+}
+
+.navLogo {
+  display: inline;
+  position: absolute;
+  left: 0.2rem;
+  
+}
+
+.button-OS {
+  display: inline;
+  position: absolute;
+  right: 170px;
+  border: 1px solid #d1d5db;
+  border-radius: 70%;
+  background-image: url('./images/openseatransparent.png');
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.button-DISCORD {
+  display: inline;
+  position: absolute;
+  right: 230px;
+  border: 1px solid #d1d5db;
+  border-radius: 70%;
+  background-image: url('./images/discordtransparent.png');
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.button-TWITTER {
+  display: inline;
+  position: absolute;
+  right: 290px;
+  border: 1px solid #d1d5db;
+  border-radius: 70%;
+  background-image: url('./images/twittertransparent.png');
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.button-accounts {
+  display: inline;
+  position: absolute;
+  right: 0;
+  margin-right: 0.5rem;
+}
+
+.button-39 {
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-39:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-39:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-39:focus-visible {
+  box-shadow: none;
+}
+.bgTest {
+  height: 100vh;
+  background-image: url(https://i.ibb.co/c6B4VNs/Plains.png);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  animation: animatedBackground 300s linear infinite;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(14px + 2vmin);
+  margin-top: 3rem;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -34,5 +146,85 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.logobounce {
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+
+
+
+
+.feedContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  align-content: center;
+}
+
+.baseFeed {
+  flex: 35%;
+  flex-direction: row;
+  min-height: 300px;
+  margin: 2%;
+  margin-left: 8%;
+	border: 15px solid transparent;
+  padding: 5px;
+  border-image: url('./images/border.png') 25 round;
+	background-color: #744f25;
+  color: white;
+
+  font-size: 2rem;
+}
+
+.historyFeed {
+  flex: 35%;
+  flex-direction: row;
+  min-height: 300px;
+  margin: 2%;
+  margin-right: 8%;
+	border: 15px solid transparent;
+  padding: 5px;
+  border-image: url('./images/border.png') 25 round;
+	background-color: #744f25;
+  color: white;
+
+  font-size: 2rem;
+}
+
+.globalFeed {
+  flex: 50%;
+  flex-direction: row;
+  min-height: 300px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 5%;
+	border: 15px solid transparent;
+  padding: 5px;
+  border-image: url('./images/border.png') 25 round;
+	background-color: #744f25;
+  color: white;
+  font-size: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .baseFeed, .historyFeed, .globalFeed {
+    flex: 100%;
+    margin: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
   }
 }

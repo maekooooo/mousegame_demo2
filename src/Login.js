@@ -15,10 +15,10 @@ function Login(props) {
         };
 
         axios.post(`http://localhost:5000/api/user/${username}`, loginData, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then((response) => {
                 if (response.status === 200) {
                     console.log('Login successful');

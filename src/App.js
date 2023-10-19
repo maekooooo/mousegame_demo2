@@ -6,6 +6,8 @@ import Login from './Login';
 import Register from './Register';
 import GlobalHunt from './GlobalHunt';
 import HuntButton from './HuntButton';
+import DeleteAccount from './DeleteAccount';
+
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -47,6 +49,10 @@ function App() {
         }
     };
 
+    const handleDeleteAccount = () => {
+        console.log('wow')
+    }
+
     return (
         <div className="App">
             <header>
@@ -80,11 +86,21 @@ function App() {
                 )}
                 {showRegister && <Register />}
                 <p></p>
-                <HuntButton
+                <div className="huntContainer">
+                    <HuntButton
+                        isLoggedIn={isLoggedIn}
+                        username={userData && userData.profile.username}
+                        onHuntSuccess={handleHuntSuccess}
+                    />
+                </div>
+                <div className="deleteAccountButton">
+                    <DeleteAccount
                     isLoggedIn={isLoggedIn}
                     username={userData && userData.profile.username}
-                    onHuntSuccess={handleHuntSuccess}
-                />
+                    onDeleteSuccess={handleUserLogout}
+                    />
+                </div>
+
                 <div className="feedContainer">
                     <div className="baseFeed">
                         {isLoggedIn ? (
@@ -127,9 +143,6 @@ function App() {
                         <GlobalHunt /> {/* Render the GlobalHunt component here */}
                     </div>
                 </div>
-                <button className="delete-account-button" onClick={handleDeleteAccount}>
-                    Delete Account
-                </button>
             </main>
         </div>
     );

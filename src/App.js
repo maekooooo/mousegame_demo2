@@ -45,6 +45,7 @@ function App() {
       <main>
         {showLogin && <Login />}
         {showRegister && <Register />}
+        <p></p>
         <button className="button-39">HUNT</button>
         <div className="feedContainer">
           <div className="baseFeed">

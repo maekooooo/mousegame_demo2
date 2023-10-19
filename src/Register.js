@@ -11,20 +11,17 @@ function Register() {
       password: password,
     };
 
-    axios.post('/api/register', registrationData, {
+    axios.post('http://localhost:5000/api/register', registrationData, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
       .then((response) => {
         if (response.status === 201) {
-          // Registration was successful, you can handle the success case here
           console.log('Registration successful');
         } else if (response.status === 409) {
-          // Username already exists, handle this case
           console.log('Username already exists');
         } else {
-          // Handle other error cases
           console.log('Registration failed');
         }
       })

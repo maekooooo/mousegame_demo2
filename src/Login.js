@@ -54,34 +54,32 @@ function Login(props) {
             });
     };
 
-
-
-  return (
-    <div className="login-form">
-      {props.isLoggedIn ? (
-        // Render logout button if the user is logged in
-        <button onClick={handleLogout}>Logout</button>
-      ) : (
-        // Render login form if the user is not logged in
-        <div>
-          <h2>Login</h2>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            />
-              <button onClick={handleLogin}>Login</button>
-            </div>
-          )}
+    return (
+        <div className="login-form">
+            {props.isLoggedIn ? (
+                // Render logout button if the user is logged in
+                <button onClick={handleLogout}>Logout</button>
+            ) : (
+                // Render login form if the user is not logged in
+                <div>
+                    <h2>Login</h2>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <button onClick={handleLogin}>Login</button>
+                </div>
+            )}
         </div>
-      );
-    }
+    );
+}
 
 export default Login;
